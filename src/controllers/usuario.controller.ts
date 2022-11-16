@@ -1,3 +1,4 @@
+import { service } from '@loopback/core';
 import {
   Count,
   CountSchema,
@@ -16,15 +17,49 @@ import {
   del,
   requestBody,
   response,
+  HttpErrors,
 } from '@loopback/rest';
-import {Usuario} from '../models';
+import { Llaves } from '../config/llaves';
+import {Credenciales, Usuario} from '../models';
 import {UsuarioRepository} from '../repositories';
+import { AutenticacionService } from '../services';
+const fetch = require("node-fetch");
 
 export class UsuarioController {
   constructor(
     @repository(UsuarioRepository)
     public usuarioRepository : UsuarioRepository,
+
+    @service(AutenticacionService)
+    public servicioAutenticacion: AutenticacionService
   ) {}
+
+
+  @post('/identificarUsuario',{
+    responses:{
+      '200':{
+        descripcion: "Identificación de usuarios."
+      }
+    }
+  })
+  async identificarUsuario(
+    @requestBody() credenciales : Credenciales
+  ){
+    let p = await this.servicioAutenticacion.IdentificarPersona(credenciales.usuario, credenciales.clave);
+      if(p){
+        let token = this.servicioAutenticacion.GenerarTokenJWT(p);
+        return {
+          datos:{
+            nombre: p.nombre,
+            correo: p.email,
+            id: p.id
+          },
+          tk: token          
+        }
+      }else{
+        throw new HttpErrors[401]("Datos inválidos.")
+      }
+  }
 
   @post('/usuarios')
   @response(200, {
@@ -44,8 +79,25 @@ export class UsuarioController {
     })
     usuario: Omit<Usuario, 'id'>,
   ): Promise<Usuario> {
-    return this.usuarioRepository.create(usuario);
+
+      let clave = this.servicioAutenticacion.GenerarClave();
+      let claveCifrada = this.servicioAutenticacion.CifrarClave(clave);
+      usuario.clave = claveCifrada;
+      let p = await this.usuarioRepository.create(usuario);
+
+      //Notificar al usuario
+      let destino = usuario.email;
+      let asunto = 'Registro en la plataforma'
+      let contenido = `Hola ${usuario.nombre} ${usuario.apellido}, su nombre de usuario es ${usuario.email} y su contraseña es ${clave}`;
+      fetch(`${Llaves.urlServicioNotificaciones}/envio-correo?correo_destino=${destino}&asunto=${asunto}&contenido=${contenido}`)
+      .then((data:any) => {
+        console.log(data);
+       
+      })
+
+      return p;
   }
+  
 
   @get('/usuarios/count')
   @response(200, {

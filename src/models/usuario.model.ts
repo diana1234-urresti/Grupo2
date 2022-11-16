@@ -55,9 +55,15 @@ export class Usuario extends Entity {
 
   @property({
     type: 'date',
-    required: true,
+    required: false,
   })
   nacimiento: string;
+
+  @property({
+    type: 'string',
+    required: false,
+  })
+  clave: string;
 
   @property({
     type: 'string',

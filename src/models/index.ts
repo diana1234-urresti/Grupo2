@@ -8,3 +8,4 @@ export * from './zonas.model';
 export * from './plan.model';
 export * from './parque.model';
 export * from './compras.model';
+export * from './credenciales.model';
