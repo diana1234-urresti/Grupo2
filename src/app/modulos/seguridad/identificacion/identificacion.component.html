@@ -1,0 +1,156 @@
+<!-- <!DOCTYPE html> -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Ubuntu" rel="stylesheet">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="identificacion.component.css">
+
+    <title>Formulario Login y Registro de Usuarios</title>
+</head>
+<body>
+
+   <!-- Formularios -->
+    <div class="contenedor-formularios">
+        <!-- Links de los formularios -->
+        <ul class="contenedor-tabs">
+            <li class="tab tab-segunda active"><a href="#iniciar-sesion">Iniciar Sesión</a></li>
+            <li class="tab tab-primera"><a href="#registrarse">Registrarse</a></li>
+        </ul>
+
+        <!-- Contenido de los Formularios -->
+        <div class="contenido-tab">
+            <!-- Iniciar Sesion -->
+            <div id="iniciar-sesion">
+                <h1>Iniciar Sesión</h1>
+                <!--action="#" method="post" -->
+                <form [formGroup]="fgvalidador" (ngSubmit)="IdentificarUsuario()" >
+                    <div class="contenedor-input">
+                        <label>
+                            Usuario <span class="req">*</span>
+                        </label>
+                        <input formControlName="usuario" type="email" id="email" class="validate" required>
+                    </div>
+
+                    <div class="contenedor-input">
+                        <label>
+                            Contraseña <span class="req">*</span>
+                        </label>
+                        <input formCotrolName="clave" type="password" id="password" class="validate" required>
+                    </div>
+                    <p class="forgot"><a href="#">Se te olvidó la contraseña?</a></p>
+
+                    <div class="row center-align">
+                      <button  class="button button-block" type="submit" >Iniciar Sesión</button>
+                     
+                    </div>
+                  <!-- <input  type="submit" class="button button-block" value="Iniciar Sesión"> -->
+                    
+                    
+                </form>
+            </div>
+
+            <!-- Registrarse -->
+            <div id="registrarse">
+                <h1>Registrarse</h1>
+                <form action="#" method="post">
+                    <div class="fila-arriba">
+                        <div class="contenedor-input">
+                            <label>
+                                Nombre <span class="req">*</span>
+                            </label>
+                            <input type="text" required >
+                        </div>
+
+                        <div class="contenedor-input">
+                            <label>
+                                Apellido <span class="req">*</span>
+                            </label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+                    <div class="contenedor-input">
+                        <label>
+                            Usuario <span class="req">*</span>
+                        </label>
+                        <input type="text" required>
+                    </div>
+                    <div class="contenedor-input">
+                            <label>
+                                Email <span class="req">*</span>
+                            </label>
+                        <input type="email" required>
+                    </div>
+                    <div class="contenedor-input">
+                        <label>
+                            Contraseña <span class="req">*</span>
+                        </label>
+                        <input type="password" required>
+                    </div>
+
+                    <div class="contenedor-input">
+                        <label>
+                            Repetir Contraseña <span class="req">*</span>
+                        </label>
+                        <input type="password" required>
+                    </div>
+
+                    <input type="submit" class="button button-block" value="Registrarse">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--<script >
+    $(document).ready(function () {
+  $(".contenedor-formularios")
+    .find("input, textarea")
+    .on("keyup blur focus", function (e) {
+      var $this = $(this),
+        label = $this.prev("label");
+
+      if (e.type === "keyup") {
+        if ($this.val() === "") {
+          label.removeClass("active highlight");
+        } else {
+          label.addClass("active highlight");
+        }
+      } else if (e.type === "blur") {
+        if ($this.val() === "") {
+          label.removeClass("active highlight");
+        } else {
+          label.removeClass("highlight");
+        }
+      } else if (e.type === "focus") {
+        if ($this.val() === "") {
+          label.removeClass("highlight");
+        } else if ($this.val() !== "") {
+          label.addClass("highlight");
+        }
+      }
+    });
+
+  $(".tab a").on("click", function (e) {
+    e.preventDefault();
+
+    $(this).parent().addClass("active");
+    $(this).parent().siblings().removeClass("active");
+
+    target = $(this).attr("href");
+
+    $(".contenido-tab > div").not(target).hide();
+
+    $(target).fadeIn(600);
+  });
+});
+
+   </script>
+   <script src="./identificacion.component.ts"></script> -->   
+
+</body>
+</html>

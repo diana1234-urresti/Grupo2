@@ -1,0 +1,32 @@
+<nav>
+    <div class="nav-wrapper">
+      <a routerlink="/inicio" class="brand-logo">Logo</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a routerLink="/administracion/personas">Usuarios</a></li>
+        <li><a routerLink="/administracion/departamento">Departamento</a></li>
+        <li><a routerLink="/seguridad/cambio-clave">Cambio de clave</a></li>
+        <li><a routerLink="/seguridad/identificacion">Iniciar sesión</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a routerLink="/administracion/personas">Usuarios</a></li>
+    <li><a routerLink="/administracion/departamento">Departamento</a></li>
+    <li><a routerLink="/seguridad/cambio-clave">Cambio de clave</a></li>
+    <li><a routerLink="/seguridad/identificacion">Iniciar sesión</a></li>
+  </ul>
+      
+    <script>  
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, options);
+        });
+
+        // Or with jQuery
+
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+        });
+    </script>
