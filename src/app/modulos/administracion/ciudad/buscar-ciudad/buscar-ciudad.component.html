@@ -1,1 +1,41 @@
-<p>buscar-ciudad works!</p>
+<a routerLink="/administracion/crear-ciudad" class="btn">Crear ciudad</a>
+<table class="table-responsive">
+    <thead>
+        <tr>
+            <th>
+                Código
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Departamento
+            </th>
+            <th>
+                Parque
+            </th>
+            <th>
+                Editar
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of listadoCiudades">
+            <td>
+                {{p.codigo}}
+            </td>
+            <td>
+                {{p.nombre}}
+            </td>
+            <td>
+                {{p.departamentoId}}
+            </td>
+            <td>
+                {{p.parques}}
+            </td>
+            <td>
+                <a routerLink="/administracion/editar-ciudad/{{p.id}}" class="btn">Editar ciudad</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

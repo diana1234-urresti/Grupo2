@@ -71,7 +71,7 @@ const routes: Routes = [
     component: CrearCiudadComponent
   },
   {
-    path:  "editar-ciudad",
+    path:  "editar-ciudad/:id",
     component: EditarCiudadComponent
   },
   {

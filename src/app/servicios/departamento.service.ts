@@ -19,6 +19,10 @@ export class DepartamentoService {
     return this.http.get<ModeloDepartamento[]>(`${this.url}/departamentos`)
   }
 
+  ObtenerDepartamentosPorId(id: string):Observable<ModeloDepartamento>{
+    return this.http.get<ModeloDepartamento>(`${this.url}/departamentos/${id}`)
+  }
+
   CrearDepartamento(departamento: ModeloDepartamento):Observable<ModeloDepartamento>{
     return this.http.post<ModeloDepartamento>(`${this.url}/departamentos`,departamento,{
       headers: new HttpHeaders({
@@ -29,7 +33,7 @@ export class DepartamentoService {
 
   
   ActualizarDepartamento(departamento: ModeloDepartamento):Observable<ModeloDepartamento>{
-    return this.http.put<ModeloDepartamento>(`${this.url}/departamentos`,departamento,{
+    return this.http.put<ModeloDepartamento>(`${this.url}/departamentos/${departamento.id}`,departamento,{
       headers: new HttpHeaders({
         'Authorization':`Bearer ${this.token}`         
       })

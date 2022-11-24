@@ -16,14 +16,12 @@
     <tbody>
         <tr *ngFor="let p of listadoDepartamentos">
             <td>
-                {{p.id}}
-            </td>
-            <td>
                 {{p.codigo}}
             </td>
             <td>
                 {{p.nombre}}
             </td>
+
             <td>
                 <a routerLink="/administracion/editar-departamento/{{p.id}}" class="btn">Editar departamento</a>
             </td>
