@@ -34,10 +34,9 @@
            
             <div class="col-md-6">
               <label for="validacionDepartamento" class="form-label">Departamento: </label>
-              <select class="form-select"    formControlName="departamentoId"   id="validacionDepartamento" required>
+              <select formControlName="departamentoId" class="form-select"       id="validacionDepartamento" required>
                 <option selected disabled value="">Seleccione el departamento:</option>
-                <option>a</option>
-                <option value="">b</option>              
+                <option *ngFor="let p of listadoDepartamentos" > {{p.nombre}}</option>                              
               </select>
               <div class="invalid-feedback">
                 Es necesario seleccionar uno de los Departamentos.
@@ -46,10 +45,10 @@
 
             <div class="col-md-6">
                 <label for="validacionParque" class="form-label">Parque: </label>
-                <select class="form-select"  formControlName="parques"   id="validacionParque" required>
+                <select formControlName="parques" class="form-select"  id="validacionParque" required>
                   <option selected disabled value="">Seleccione el departamento:</option>
-                  <option>a</option>
-                  <option value="">b</option>              
+                  <option  > a</option>   
+                  <option  > b</option>                           
                 </select>
                 <div class="invalid-feedback">
                   Es necesario seleccionar uno de los Departamentos.
