@@ -147,7 +147,7 @@ const routes: Routes = [
     component: CrearDepartamentoComponent
   },
   {
-    path:  "editar-departamento",
+    path:  "editar-departamento/:id",
     component: EditarDepartamentoComponent
   },
   {

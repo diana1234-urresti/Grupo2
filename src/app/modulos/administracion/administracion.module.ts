@@ -42,6 +42,7 @@ import { BuscarZonaComponent } from './zona/buscar-zona/buscar-zona.component';
 import { CrearZonaComponent } from './zona/crear-zona/crear-zona.component';
 import { EditarZonaComponent } from './zona/editar-zona/editar-zona.component';
 import { EliminarZonaComponent } from './zona/eliminar-zona/eliminar-zona.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -89,7 +90,9 @@ import { EliminarZonaComponent } from './zona/eliminar-zona/eliminar-zona.compon
   ],
   imports: [
     CommonModule,
-    AdministracionRoutingModule
+    AdministracionRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AdministracionModule { }
