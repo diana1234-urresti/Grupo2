@@ -1,1 +1,42 @@
-<p>buscar-comida works!</p>
+<a routerLink="/administracion/crear-comida" class="btn">Crear comida</a>
+<table class="table responsive">
+    <thead>
+        <tr>
+            <th>
+                Código
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Imagen
+            </th>
+            <th>
+                Menu
+            </th>
+            <th>
+                Editar
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of listadoComidas">
+            <th>
+                {{p.codigo}}
+            </th>
+            <th>
+                {{p.nombre}}
+            </th>
+            <th>
+                <img src="{{p.imagen}}" class="imagenComida">
+            </th>
+            <th>
+                <img src="{{p.menu}}" class="imagenComida">
+            </th>
+            <th>
+                <a routerLink="/administracion/editar-comida/{{p.id}}" class="btn ">Editar</a>
+            </th>
+        </tr>
+    </tbody>
+
+</table>

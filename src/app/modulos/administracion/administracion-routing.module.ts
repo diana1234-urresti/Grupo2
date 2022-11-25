@@ -51,7 +51,7 @@ const routes: Routes = [
     component: CrearAtraccionComponent
   },
   {
-    path:  'editar-atraccion',
+    path:  'editar-atraccion/:id',
     component: EditarAtraccionComponent
   },
   {
@@ -90,7 +90,7 @@ const routes: Routes = [
     component: CrearComidaComponent
   },
   {
-    path:  "editar-comida",
+    path:  "editar-comida/:id",
     component: EditarComidaComponent
   },
   {

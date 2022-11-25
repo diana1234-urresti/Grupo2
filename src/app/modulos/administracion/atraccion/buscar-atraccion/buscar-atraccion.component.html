@@ -1,1 +1,55 @@
-<p>buscar-atraccion works!</p>
+<a routerLink="/administracion/crear-atraccion" class="btn">Crear atracción</a>
+<table class="table responsive">
+    <thead>
+        <tr>
+            <th>
+                Código
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Imagen
+            </th>
+            <th>
+                Estatura Mínima
+            </th>
+            <th>
+                Video
+            </th>
+            <th>
+                Descripción
+            </th>
+            <th>
+                Editar
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of listadoAtracciones">
+            <th>
+                {{p.codigo}}
+            </th>
+            <th>
+                {{p.nombre}}
+            </th>
+            <th>
+                <img src="{{p.imagen}}" class="imagenComida">
+            </th>
+            <th>
+                {{p.min_estatura}}
+            </th>
+            <th>
+                {{p.enlace_youtube}}
+            </th>
+            <th>
+                {{p.descripcion}}
+            </th>
+            <th>
+                <a routerLink="/administracion/editar-atraccion/{{p.id}}" class="btn ">Editar</a>
+            </th>
+        </tr>
+    </tbody>
+
+</table>
+
