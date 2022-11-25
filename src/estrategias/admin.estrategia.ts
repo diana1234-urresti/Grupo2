@@ -3,10 +3,10 @@ import { service } from "@loopback/core";
 import { Request, RedirectRoute, HttpErrors, JsonBodyParser } from "@loopback/rest";
 import { UserProfile } from "@loopback/security";
 import { ParamsDictionary } from "express-serve-static-core";
-import { JsonWebTokenError } from "jsonwebtoken";
 import parseBearerToken from "parse-bearer-token";
 import { ParsedQs } from "qs";
 import { AutenticacionService } from "../services";
+
 
 export class EstrategiaAdministrador implements AuthenticationStrategy{
     name: string ="Administrador";

@@ -19,6 +19,12 @@ export class Parque extends Entity {
     type: 'string',
     required: true,
   })
+  codigo: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
   nombre: string;
 
   @property({
@@ -32,6 +38,12 @@ export class Parque extends Entity {
     required: true,
   })
   email: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
+  color: string;
 
   @property({
     type: 'number',
@@ -53,7 +65,7 @@ export class Parque extends Entity {
 
   @property({
     type: 'string',
-    required: true,
+    required: false,
   })
   eslogan: string;
 

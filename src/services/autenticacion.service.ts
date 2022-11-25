@@ -2,8 +2,8 @@ import {injectable, /* inject, */ BindingScope} from '@loopback/core';
 import { repository } from '@loopback/repository';
 import { Usuario } from '../models';
 import { UsuarioRepository } from '../repositories';
-import jwt, { TokenExpiredError } from "jsonwebtoken";
 import { Llaves } from '../config/llaves';
+const jwt = require("jsonwebtoken");
 const generador = require("password-generator");
 const cryptoJS = require("crypto-js");
 
@@ -40,10 +40,11 @@ IdentificarPersona(usuario: string, clave:string){
 
 GenerarTokenJWT(usuario: Usuario){
   let token  = jwt.sign({
-    info:{
+    data:{
       id: usuario.id,
       email: usuario.email,
-      nombre: usuario.nombre +" "+ usuario.apellido
+      nombre: usuario.nombre +" "+ usuario.apellido,
+      cargo: usuario.cargo
     }
   },
   Llaves.claveJWT

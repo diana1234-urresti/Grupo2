@@ -1,3 +1,4 @@
+import { authenticate } from '@loopback/authentication';
 import {
   Count,
   CountSchema,
@@ -19,13 +20,14 @@ import {
 } from '@loopback/rest';
 import {Departamento} from '../models';
 import {DepartamentoRepository} from '../repositories';
-
+//If I wish that all method are protected, I should put authenticate here.
 export class DepartamentoController {
   constructor(
     @repository(DepartamentoRepository)
     public departamentoRepository : DepartamentoRepository,
   ) {}
 
+  //@authenticate("Administrador")
   @post('/departamentos')
   @response(200, {
     description: 'Departamento model instance',
@@ -58,6 +60,7 @@ export class DepartamentoController {
     return this.departamentoRepository.count(where);
   }
 
+  @authenticate.skip()
   @get('/departamentos')
   @response(200, {
     description: 'Array of Departamento model instances',
