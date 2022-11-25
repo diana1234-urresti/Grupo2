@@ -1,1 +1,113 @@
-<p>editar-parque works!</p>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+         <h1>Editar parque</h1>
+    </div>
+
+
+    <!-- Formulario-->
+      <div class="container">
+        <form  [formGroup]="fbvalidador"  (ngSubmit)="EditarParque()" class="row g-3 needs-validation" novalidate>
+            <input type="hidden" formControlName="id">
+            <div class="col-md-4">
+              <label for="validacionCodigoParque" class="form-label">Código:</label>
+              <input formControlName="codigo" type="text" class="form-control" id="validacionCodigoParque" value="" required>
+              <div class="invalid-feedback">
+                Este campo es requerido.
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="validacionNombreParque" class="form-label">Nombre:</label>
+              <input formControlName="nombre" type="text" class="form-control" id="validacionNombreParque" value="" required>
+              <div class="invalid-feedback">
+                Este campo es requerido.
+              </div>
+            </div>
+
+            <div class="col-md-4">
+                <label for="validacionDireccion" class="form-label">Dirección:</label>
+                <input formControlName="direccion" type="text" class="form-control" id="validacionDireccion" value="" required>
+                <div class="invalid-feedback">
+                  Este campo es requerido.
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <label for="validacionEmailParque" class="form-label">Email:</label>
+                <input formControlName="email" type="email" class="form-control" id="validacionEmailParque" value="" required>
+                <div class="invalid-feedback">
+                  Este campo es requerido.
+                </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="validacionColorParque" class="form-label">Asigne un color al parque:</label>
+              <input formControlName="color" type="color" class="form-control" id="validacionColorParque" value="" required>
+              <div class="invalid-feedback">
+                La selección del color es necesaria. 
+              </div>
+          </div>
+
+          
+
+            <div class="col-md-4">
+                <label for="validacionVisitantes" class="form-label">Cantidad máxima de visitantes:</label>
+                <input formControlName="visitantes" type="number" class="form-control" id="validacionVisitantes" value="" required>
+                <div class="invalid-feedback">
+                  Este campo es requerido.
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <label for="validacionLogotipoParque" class="form-label">Cargue el logotipo del parque:</label>
+                <input formControlName="logo" type="text" class="form-control" id="validacionLogotipoParque" value="" required>
+                <div class="invalid-feedback">
+                  Es necesario cargar el logitipo del parque.
+                </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="validacionMapaParque" class="form-label">Cargue el mapa del parque:</label>
+              <input formControlName="mapa" type="text" class="form-control" id="validacionMapaParque" value="" required>
+              <div class="invalid-feedback">
+                Es necesario cargar el mapa del parque.
+              </div>
+            </div>       
+
+            <div class="col-md-12">
+              <label for="validaciónDescricpcionParque" class="form-label">Descripción del parque: </label>
+              <div class="input-group has-validation">
+                <textarea formControlName="descripcion" name="" id="validaciónDescricpcionParque" cols="150%" rows="10"></textarea>
+              </div>
+            </div>
+          
+         
+            
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Editar parque</button>
+            </div>
+          </form>
+
+
+       
+      </div>
+
+    <script type="text/javascript" src="recursos/funciones.js"></script>
+     
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+     crossorigin="anonymous"></script>
+  </body>
+</html>

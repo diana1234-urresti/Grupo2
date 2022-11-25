@@ -1,1 +1,58 @@
-<p>buscar-parque works!</p>
+<a routerLink="/administracion/crear-parque" class="btn">Crear Parque</a>
+<table class="table-resposive">
+    <thead>
+        <tr>
+            <th>
+                Nombre    
+            </th>
+            <th>
+                Dirección
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                MaxVisit
+            </th>    
+            <th>
+                Logo
+            </th>
+            <th>
+                Mapa
+            </th>
+            <th>
+                Descripción
+            </th>    
+            <th>
+                Editar
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of listadoParques">
+            <th>
+                {{p.nombre}}
+            </th>
+            <th>
+                {{p.direccion}}
+            </th>
+            <th>
+                {{p.email}}
+            </th>
+            <th>
+                {{p.max_visitantes_dia}}
+            </th>
+            <th>
+                <img src="{{p.logo}} " class="imagenParque"> 
+            </th>
+            <th>
+                <img src=" {{p.mapa}}" class="imagenParque">
+            </th>
+            <th>
+                {{p.descripcion}}
+            </th>
+            <th routerLink="/administracion/editar-parque/{{p.id}}" class="btn">Editar parque</th>
+        </tr>
+    </tbody>
+
+</table>

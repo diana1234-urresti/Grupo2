@@ -166,7 +166,7 @@ const routes: Routes = [
     component: CrearParqueComponent
   },
   {
-    path:  "editar-parque",
+    path:  "editar-parque/:id",
     component: EditarParqueComponent
   },
   {

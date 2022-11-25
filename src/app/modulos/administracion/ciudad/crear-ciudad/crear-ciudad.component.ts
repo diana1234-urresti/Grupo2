@@ -14,7 +14,7 @@ import { DepartamentoService } from 'src/app/servicios/departamento.service';
 export class CrearCiudadComponent implements OnInit{
 
   listadoDepartamentos: ModeloDepartamento[]=[];
-  PARQUES: string[]=[];
+
 
 
 
@@ -22,7 +22,7 @@ export class CrearCiudadComponent implements OnInit{
     'codigo':['',[Validators.required]],
     'nombre':['',[Validators.required]],
     'departamentoId':['',[Validators.required]],
-    'parques':['',[Validators.required]]
+    
   });
 
   constructor(private fb:FormBuilder,
@@ -45,20 +45,18 @@ export class CrearCiudadComponent implements OnInit{
 
   GuardarCiudad(){
     let codigo =this.fbvalidador.controls["codigo"].value;
-    alert(codigo+typeof(codigo))
+   
     let nombre = this.fbvalidador.controls['nombre'].value;
-    alert(nombre+typeof(nombre))
+   
     let departamentoId = this.fbvalidador.controls['departamentoId'].value;
-    alert(departamentoId+typeof(departamentoId))
-    let parques = this.fbvalidador.controls['parques'].value.toString();
-    alert(parques+typeof(parques))
+    
 
     let p = new ModeloCiudad();
 
     p.codigo=codigo;
     p.nombre=nombre;
     p.departamentoId=departamentoId;
-    p.parques=this.PARQUES.push(parques);
+    
 
     this.servicioCiudad.CrearCiudad(p).subscribe((datos: ModeloCiudad)=>{
       alert('Ciudad creada.');

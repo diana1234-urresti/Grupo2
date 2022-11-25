@@ -21,6 +21,10 @@ export class CiudadService {
     return   this.http.get<ModeloCiudad[]>(`${this.url}/ciudads`);
   }
 
+  ObtenerCiudadesPorId(id: string): Observable<ModeloCiudad> {
+    return   this.http.get<ModeloCiudad>(`${this.url}/ciudads/${id}`);
+  }
+
   CrearCiudad(ciudad: ModeloCiudad){
     return this.http.post<ModeloCiudad>(`${this.url}/ciudads`, ciudad,{
       headers:new HttpHeaders({
@@ -30,7 +34,7 @@ export class CiudadService {
   }
 
   ActualizarCiudad(ciudad: ModeloCiudad){
-    return this.http.put<ModeloCiudad>(`${this.url}/ciudads`, ciudad,{
+    return this.http.put<ModeloCiudad>(`${this.url}/ciudads/${ciudad.id}`, ciudad,{
       headers:new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
       })
