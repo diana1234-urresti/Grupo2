@@ -1,1 +1,76 @@
-<p>buscar-persona works!</p>
+<a routerLink="/administracion/crear-persona" class="btn">Crear Usuario</a>
+<table class="table responsive">
+    <thead>
+        <tr>
+            <th>
+                DNI
+            </th>
+            <th>
+                Nombres
+            </th>
+            <th>
+                Apellidos
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Cargo
+            </th>
+            <th>
+                Teléfono
+            </th>
+            <th>
+                Celular
+            </th>
+            <th>
+                Nacimiento
+            </th>
+            <th>
+                Clave
+            </th>
+            <th>
+                Editar
+            </th>
+        </tr>        
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of listadoUsuarios">
+            <td>
+                {{p.dni}}
+            </td>
+            <td>
+                {{p.nombre}}
+            </td>
+            <td>
+                {{p.apellido}}
+            </td>
+            <td>
+                {{p.email}}
+            </td>
+            <td>
+                {{p.cargo}}
+            </td>
+            <td>
+                {{p.telefono_fijo}}
+            </td>
+            <td>
+                {{p.celular}}
+            </td>
+            <td>
+                {{p.nacimiento}}
+            </td>
+            <td>
+                {{p.clave}}
+            </td>           
+
+            <td>
+                <a routerLink="/administracion/editar-persona/{{p.id}}" class="btn">Editar</a>
+            </td>
+
+
+        </tr>
+    </tbody>
+
+</table>
+

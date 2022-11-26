@@ -1,9 +1,9 @@
 <nav>
     <div class="nav-wrapper">
-      <a routerlink="/inicio" class="brand-logo">Logo</a>
+      <a routerlink="/inicio" class="brand-logo"><img src="https://th.bing.com/th/id/OIP.qGvV5o82JlwmYRY7PH7hMAAAAA?w=174&h=180&c=7&r=0&o=5&pid=1.7" class="imagen"></a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li *ngIf="seInicioSesion"><a routerLink="/administracion/personas">Usuarios</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-persona">Usuarios</a></li>
         <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-departamento">Departamentos</a></li>
         <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-ciudad">Ciudades</a></li>
         <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-comida">Comidas</a></li>
@@ -19,7 +19,7 @@
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li *ngIf="seInicioSesion"><a routerLink="/administracion/personas">Usuarios</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-persona">Usuarios</a></li>
     <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-departamento">Departamentos</a></li>
     <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-ciudad">Ciudades</a></li>
     <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-comida">Comidas</a></li>

@@ -185,7 +185,7 @@ const routes: Routes = [
     component: CrearPersonaComponent
   },
   {
-    path:  "editar-persona",
+    path:  "editar-persona/:id",
     component: EditarPersonaComponent
   },
   {

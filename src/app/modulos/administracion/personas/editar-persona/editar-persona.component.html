@@ -1,1 +1,90 @@
-<p>editar-persona works!</p>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  </head>
+        <body>
+            <div class="container">
+            <h1>Editar usuario</h1>
+            </div>
+            <br>
+
+            <div class="container">
+                <form  [formGroup]="fbvalidador" (ngSubmit)="EditarUsuario()" class="row g-3 needs-validation" novalidate>
+                    <div class="row">
+                        <div class="input-field col s2">
+                            <input formControlName="dni" id="dni" type="text" class="validate">
+                            <label class="active" for="dni">DNI:</label>
+                        </div>
+                        <div class="input-field col s5">
+                        <input formControlName="nombre"  id="first_name" type="text" class="validate">
+                        <label class="active" for="first_name">Nombres: </label>
+                        </div>
+                        <div class="input-field col s5">
+                        <input formControlName="apellido" id="last_name" type="text" class="validate">
+                        <label class="active" for="last_name">Apellidos: </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                        <input formControlName="email" id="email" type="email" class="validate">
+                        <label class="active" for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="validacionCargo" class="form-label">Cargo: </label>
+                            <select formControlName="cargo" class="form-select" id="validacionCargo" multiple required>
+                            <option selected disabled value=""> Seleccione el cargo del usuario: </option>
+                            <option>Administrador</option>
+                            <option>Empleado Administrativo</option>
+                            <option>Operario</option>
+                            <option >Servicios generales</option>
+                            </select>
+                            <div class="invalid-feedback">
+                            Es necesario seleccionar un Cargo.
+                            </div>
+                        </div>  
+
+
+                        
+                            <div class="input-field col s4">
+                                <i class="material-icons prefix">phone</i>
+                                <input formControlName="telefono" id="icon_telephone" type="tel" class="validate">
+                                <label class="active" for="icon_telephone">Teléfono Fijo:</label>
+                            </div>
+                            <div class="input-field col s4">
+                                <i class="material-icons prefix">phone</i>
+                                <input formControlName="celular" id="icon_telephone" type="tel" class="validate">
+                                <label class="active" for="icon_telephone">Teléfono Celular:</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                            <input formControlName="nacimiento" id="nacimiento" type="date" class="validate">
+                            <label class="active" for="nacimiento">Fecha de nacimiento: </label>
+                        </div>
+
+                            <div class="col-12">
+                                <button class="btn btn-primary" type="submit" >Editar usuario</button>
+                            </div>
+                    </div>      
+
+                
+                </form>
+                
+            </div>
+            
+
+
+            <script type="text/javascript" src="recursos/funciones.js"></script>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" 
+            crossorigin="anonymous">  
+            </script>
+        </body>
+</html>

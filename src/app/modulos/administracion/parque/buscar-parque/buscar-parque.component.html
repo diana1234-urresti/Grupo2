@@ -3,6 +3,9 @@
     <thead>
         <tr>
             <th>
+                Código
+            </th>
+            <th>
                 Nombre    
             </th>
             <th>
@@ -30,6 +33,9 @@
     </thead>
     <tbody>
         <tr *ngFor="let p of listadoParques">
+            <th>
+                {{p.codigo}}
+            </th>
             <th>
                 {{p.nombre}}
             </th>

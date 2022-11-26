@@ -37,6 +37,7 @@ export class EditarCiudadComponent {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
+    this.BuscarCiudad();
     this.ListarDepartamentos();
         
   }
