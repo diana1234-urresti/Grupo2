@@ -4,11 +4,13 @@
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li *ngIf="seInicioSesion"><a routerLink="/administracion/personas">Usuarios</a></li>
-        <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-departamento">Departamento</a></li>
-        <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-ciudad">Ciudad</a></li>
-        <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-comida">Comida</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-departamento">Departamentos</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-ciudad">Ciudades</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-comida">Comidas</a></li>
         <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-atraccion">Atracciones</a></li>
-        <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-parque">Parque</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-plan">Planes</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-parque">Parques</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-zona">Zonas</a></li>
         <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cambio-clave">Cambio de clave</a></li>
         <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrar-sesion">Cerrar sesión</a></li>
         <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/identificacion">Iniciar sesión</a></li>
@@ -18,11 +20,13 @@
 
   <ul class="sidenav" id="mobile-demo">
     <li *ngIf="seInicioSesion"><a routerLink="/administracion/personas">Usuarios</a></li>
-    <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-departamento">Departamento</a></li>
-    <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-ciudad">Ciudad</a></li>
-    <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-comida">Comida</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-departamento">Departamentos</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-ciudad">Ciudades</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-comida">Comidas</a></li>
     <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-atraccion">Atracciones</a></li>
-    <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-parque">Parque</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-plan">Planes</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-parque">Parques</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="/administracion/buscar-zona">Zonas</a></li>
     <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cambio-clave">Cambio de clave</a></li>
     <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrar-sesion">Cerrar sesión</a></li>
     <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/identificacion">Iniciar sesión</a></li>

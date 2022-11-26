@@ -1,1 +1,37 @@
-<p>buscar-zona works!</p>
+<a routerLink="/administracion/crear-zona" class="btn">Crear zona</a>
+<table class="table responsive">
+    <thead>
+        <tr>
+            <th>
+                Código
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Descripción
+            </th>
+           <th>
+                Editar
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of listadoZonas">
+            <th>
+                {{p.codigo}}
+            </th>
+            <th>
+                {{p.nombre}}
+            </th>
+            <th>
+                {{p.descripcion}}
+            </th>          
+            <th>
+                <a routerLink="/administracion/editar-zona/{{p.id}}" class="btn ">Editar</a>
+            </th>
+        </tr>
+    </tbody>
+
+</table>
+

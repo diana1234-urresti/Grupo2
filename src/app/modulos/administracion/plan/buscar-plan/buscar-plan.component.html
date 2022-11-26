@@ -1,1 +1,43 @@
-<p>buscar-plan works!</p>
+<a routerLink="/administracion/crear-plan" class="btn">Crear plan</a>
+<table class="table responsive">
+    <thead>
+        <tr>
+            <th>
+                Código
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Color
+            </th>
+            <th>
+                Precio
+            </th>
+           <th>
+                Editar
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of listadoPlanes">
+            <th>
+                {{p.codigo}}
+            </th>
+            <th>
+                {{p.nombre}}
+            </th>
+            <th>
+                {{p.color}}
+            </th>
+            <th>
+                {{p.precio}}
+            </th>          
+            <th>
+                <a routerLink="/administracion/editar-plan/{{p.id}}" class="btn ">Editar</a>
+            </th>
+        </tr>
+    </tbody>
+
+</table>
+

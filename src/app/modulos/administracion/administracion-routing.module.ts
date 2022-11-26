@@ -204,7 +204,7 @@ const routes: Routes = [
     component: CrearPlanComponent
   },
   {
-    path:  "editar-plan",
+    path:  "editar-plan/:id",
     component: EditarPlanComponent
   },
   {
@@ -223,7 +223,7 @@ const routes: Routes = [
     component: CrearZonaComponent
   },
   {
-    path:  "editar-zona",
+    path:  "editar-zona/:id",
     component: EditarZonaComponent
   },
   {
