@@ -15,6 +15,12 @@ export class Atraccion extends Entity {
     type: 'string',
     required: true,
   })
+  codigo: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
   nombre: string;
 
   @property({

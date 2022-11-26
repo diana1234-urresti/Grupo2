@@ -25,12 +25,6 @@ import {UsuarioRepository} from '../repositories';
 import { AutenticacionService } from '../services';
 const fetch = require("node-fetch");
 
-const twilio = require("twilio");
-
-const accountSid = 'ACa6a6e0f3d6a2ab782b3af0bd88469701';
-const authToken ='640787721185a19333811469a20180e2';
-const client = new twilio(accountSid,authToken);
-
 export class UsuarioController {
   constructor(
     @repository(UsuarioRepository)
@@ -96,16 +90,17 @@ export class UsuarioController {
       let asunto = 'Registro en la plataforma'
       let contenido = `Hola ${usuario.nombre} ${usuario.apellido}, su nombre de usuario es ${usuario.email} y su contraseña es ${clave}`;
       
-      client.messages.create({
+      /*client.messages.create({
         body: contenido,
         to:'+57'+ destino,
         from: '+14057844996'
-    }).then((message: { sid: any; }) =>console.log('SMS =====> ENVIADO',message.sid));
-      /*fetch(`${Llaves.urlServicioNotificaciones}/envio-correo?correo_destino=${destino}&asunto=${asunto}&contenido=${contenido}`)
+    }).then((message: { sid: any; }) =>console.log('SMS =====> ENVIADO',message.sid));*/
+
+      fetch(`${Llaves.urlServicioNotificaciones}/envio-correo?correo_destino=${destino}&asunto=${asunto}&contenido=${contenido}`)
       .then((data:any) => {
         console.log(data);
        
-      })*/
+      })
 
 
       return p;

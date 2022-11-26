@@ -28,6 +28,12 @@ export class Zonas extends Entity {
     type: 'string',
     required: true,
   })
+  color: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
   descripcion: string;
 
   @hasMany(() => Comidas)
