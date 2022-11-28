@@ -1,4 +1,23 @@
-body{
-    background-image: 'https://th.bing.com/th/id/OIP.bIfNdO9RQOEAZDKsV3BHKwHaE7?w=237&h=180&c=7&r=0&o=5&pid=1.7';
+
+
+.parallax{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQceMnbCVFjXiAfSeaU0401b48-BN2pezr_1A&usqp=CAU');
+    background-repeat: no-repeat;
+    background-color:darkgray;
+    background-size: 100%;
+}
+
+h1{
+    background-color:whitesmoke;
     color: black;
+
+}
+
+h5{
+    background-color:whitesmoke;
+    color: black;
+    position:static;
+    font-size: xx-large;
+    
+    
 }
