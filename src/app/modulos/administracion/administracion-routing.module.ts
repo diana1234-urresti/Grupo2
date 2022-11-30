@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ValidadorSesionGuard } from 'src/app/guardianes/validador-sesion.guard';
 import { BuscarAtraccionComponent } from './atraccion/buscar-atraccion/buscar-atraccion.component';
 import { CrearAtraccionComponent } from './atraccion/crear-atraccion/crear-atraccion.component';
 import { EditarAtraccionComponent } from './atraccion/editar-atraccion/editar-atraccion.component';
@@ -44,19 +45,23 @@ import { EliminarZonaComponent } from './zona/eliminar-zona/eliminar-zona.compon
 const routes: Routes = [
   {
     path:'buscar-atraccion',
-    component: BuscarAtraccionComponent
+    component: BuscarAtraccionComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path: 'crear-atraccion',
-    component: CrearAtraccionComponent
+    component: CrearAtraccionComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path:  'editar-atraccion/:id',
-    component: EditarAtraccionComponent
+    component: EditarAtraccionComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
-    path: 'eliminar-atraccion',
-    component: EliminarAtraccionComponent
+    path: 'eliminar-atraccion/:id',
+    component: EliminarAtraccionComponent,
+    canActivate : [ValidadorSesionGuard]
   },
 
   
@@ -64,171 +69,206 @@ const routes: Routes = [
 
   {
     path:"buscar-ciudad",
-    component: BuscarCiudadComponent
+    component: BuscarCiudadComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path: "crear-ciudad",
-    component: CrearCiudadComponent
+    component: CrearCiudadComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path:  "editar-ciudad/:id",
-    component: EditarCiudadComponent
+    component: EditarCiudadComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
-    path: "eliminar-ciudad",
-    component: EliminarCiudadComponent
+    path: "eliminar-ciudad/:id",
+    component: EliminarCiudadComponent,
+    canActivate : [ValidadorSesionGuard]
   },
 
   //Comidas
 
   {
     path:"buscar-comida",
-    component: BuscarComidaComponent
+    component: BuscarComidaComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path: "crear-comida",
-    component: CrearComidaComponent
+    component: CrearComidaComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path:  "editar-comida/:id",
-    component: EditarComidaComponent
+    component: EditarComidaComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path: "eliminar-comida",
-    component: EliminarComidaComponent
+    component: EliminarComidaComponent,
+    canActivate : [ValidadorSesionGuard]
   },
 
   //Compras
 
   {
     path:"buscar-compra",
-    component: BuscarCompraComponent
+    component: BuscarCompraComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path: "crear-compra",
-    component: CrearCompraComponent
+    component: CrearCompraComponent,
+   
   },
   {
     path:  "editar-compra",
-    component: EditarCompraComponent
+    component: EditarCompraComponent,
   },
   {
     path: "eliminar-compra",
-    component: EliminarCompraComponent
+    component: EliminarCompraComponent,
+    canActivate : [ValidadorSesionGuard]
   },
 
   //Configuración
 
   {
     path:"buscar-configuracion",
-    component: BuscarConfiguracionComponent
+    component: BuscarConfiguracionComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path: "crear-configuracion",
-    component: CrearConfiguracionComponent
+    component: CrearConfiguracionComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path:  "editar-configuracion",
-    component: EditarConfiguracionComponent
+    component: EditarConfiguracionComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path: "eliminar-configuracion",
-    component: EliminarConfiguracionComponent
+    component: EliminarConfiguracionComponent,
+    canActivate : [ValidadorSesionGuard]
   },
 
   //Departamento
 
   {
     path:"buscar-departamento",
-    component: BuscarDepartamentoComponent
+    component: BuscarDepartamentoComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path: "crear-departamento",
-    component: CrearDepartamentoComponent
+    component: CrearDepartamentoComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path:  "editar-departamento/:id",
-    component: EditarDepartamentoComponent
+    component: EditarDepartamentoComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path: "eliminar-departamento",
-    component: EliminarDepartamentoComponent
+    component: EliminarDepartamentoComponent,
+    canActivate : [ValidadorSesionGuard]
   },
 
   //Parque
 
   {
     path:"buscar-parque",
-    component: BuscarParqueComponent
+    component: BuscarParqueComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path: "crear-parque",
-    component: CrearParqueComponent
+    component: CrearParqueComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path:  "editar-parque/:id",
-    component: EditarParqueComponent
+    component: EditarParqueComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path: "eliminar-parque",
-    component: EliminarParqueComponent
+    component: EliminarParqueComponent,
+    canActivate : [ValidadorSesionGuard]
   },
 
   //Personas
 
   {
     path:"buscar-persona",
-    component: BuscarPersonaComponent
+    component: BuscarPersonaComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path: "crear-persona",
-    component: CrearPersonaComponent
+    component: CrearPersonaComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path:  "editar-persona/:id",
-    component: EditarPersonaComponent
+    component: EditarPersonaComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path: "eliminar-persona",
-    component: EliminarPersonaComponent
+    component: EliminarPersonaComponent,
+    canActivate : [ValidadorSesionGuard]
   },
 
   //Planes
 
   {
     path:"buscar-plan",
-    component: BuscarPlanComponent
+    component: BuscarPlanComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path: "crear-plan",
-    component: CrearPlanComponent
+    component: CrearPlanComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path:  "editar-plan/:id",
-    component: EditarPlanComponent
+    component: EditarPlanComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path: "eliminar-plan",
-    component: EliminarPlanComponent
+    component: EliminarPlanComponent,
+    canActivate : [ValidadorSesionGuard]
   },
 
   //Zonas
 
   {
     path:"buscar-zona",
-    component: BuscarZonaComponent
+    component: BuscarZonaComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path: "crear-zona",
-    component: CrearZonaComponent
+    component: CrearZonaComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path:  "editar-zona/:id",
-    component: EditarZonaComponent
+    component: EditarZonaComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path: "eliminar-zona",
-    component: EliminarZonaComponent
+    component: EliminarZonaComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   
 ];

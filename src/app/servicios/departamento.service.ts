@@ -15,9 +15,10 @@ export class DepartamentoService {
     this.token = this.seguridadSerivicio.ObtenerToken();
   }
 
-  ObtenerDepartamentos():Observable<ModeloDepartamento[]>{
+  ObtenerDepartamentos():Observable<ModeloDepartamento[]>{    
     return this.http.get<ModeloDepartamento[]>(`${this.url}/departamentos`)
   }
+
 
   ObtenerDepartamentosPorId(id: string):Observable<ModeloDepartamento>{
     return this.http.get<ModeloDepartamento>(`${this.url}/departamentos/${id}`)

@@ -32,7 +32,7 @@
             </div>
 
            
-            <div class="col-md-6">
+            <div class="col-md-12">
               <label for="validacionDepartamento" class="form-label">Departamento: </label>
               <select formControlName="departamentoId" class="form-select"       id="validacionDepartamento" required>
                 <option selected disabled value="">Seleccione el departamento:</option>
@@ -43,17 +43,18 @@
               </div>
             </div>
 
-            <div class="col-md-6">
+            <!--             <div class="col-md-6">
                 <label for="validacionParque" class="form-label">Parque: </label>
-                <select formControlName="parques" class="form-select"  id="validacionParque" required>
-                  <option selected disabled value="">Seleccione el departamento:</option>
-                  <option  > a</option>   
-                  <option  > b</option>                           
+                <select multiple formControlName="parques" class="form-select"  id="validacionParque" required>
+                  <option selected disabled value="">Seleccione los parques donde se encuentra la atracción:</option>
+                  <option *ngFor="let p of listadoParques" >{{p.nombre}}</option>                                            
                 </select>
                 <div class="invalid-feedback">
                   Es necesario seleccionar uno de los Departamentos.
                 </div>
-              </div>
+              </div> -->
+
+
             
             <div class="col-12">
               <button class="btn btn-primary" type="submit">Registrar ciudad</button>
