@@ -49,6 +49,23 @@ export class CrearCiudadComponent implements OnInit{
     });
   }
 
+  ObtenerDepartamentoID(nombre : String): String{
+
+    let IdDepartamento : String = '';
+
+    this.servicioDepartamento.ObtenerDepartamentos().subscribe((datos : ModeloDepartamento[]) => {
+      this.listadoDepartamentos = datos;
+    })
+    this.listadoDepartamentos.forEach(departamento => {
+      if (departamento.nombre==nombre){
+          IdDepartamento = departamento.id!;
+      }
+      
+    });
+    return IdDepartamento;
+
+  }
+
   ListarParques(){
     return this.servicioParque.ObtenerParques().subscribe((datos : ModeloParque[]) => {
       this.listadoParques = datos;
@@ -67,7 +84,7 @@ export class CrearCiudadComponent implements OnInit{
 
     p.codigo=codigo;
     p.nombre=nombre;
-    p.departamentoId=departamentoId;
+    p.departamentoId=  this.ObtenerDepartamentoID( departamentoId);
     
 
     this.servicioCiudad.CrearCiudad(p).subscribe((datos: ModeloCiudad)=>{

@@ -1,8 +1,8 @@
 export class ModeloCiudad{
-    id?: string;
-    codigo?:string;
-    nombre?:string;
-    departamentoId?: string;
-    parques?: string[];
+    id?: String;
+    codigo?:String;
+    nombre?:String;
+    departamentoId?: String;
+    parques?: String[];
 
 }
