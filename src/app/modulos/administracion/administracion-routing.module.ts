@@ -174,7 +174,7 @@ const routes: Routes = [
     canActivate : [ValidadorSesionGuard]
   },
   {
-    path: "eliminar-departamento",
+    path: "eliminar-departamento/:id",
     component: EliminarDepartamentoComponent,
     canActivate : [ValidadorSesionGuard]
   },

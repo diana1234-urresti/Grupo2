@@ -20,7 +20,7 @@ export class DepartamentoService {
   }
 
 
-  ObtenerDepartamentosPorId(id: string):Observable<ModeloDepartamento>{
+  ObtenerDepartamentosPorId(id: String):Observable<ModeloDepartamento>{
     return this.http.get<ModeloDepartamento>(`${this.url}/departamentos/${id}`)
   }
 
@@ -41,7 +41,7 @@ export class DepartamentoService {
     })
   }
 
-  EliminarDepartamento(id: string):Observable<any>{
+  EliminarDepartamento(id: String):Observable<any>{
     return this.http.delete<ModeloDepartamento>(`${this.url}/departamentos/${id}`,{
       headers: new HttpHeaders({
         'Authorization':`Bearer ${this.token}`         

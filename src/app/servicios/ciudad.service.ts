@@ -21,7 +21,7 @@ export class CiudadService {
     return   this.http.get<ModeloCiudad[]>(`${this.url}/ciudads`);
   }
 
-  ObtenerCiudadesPorId(id: string): Observable<ModeloCiudad> {
+  ObtenerCiudadesPorId(id: String): Observable<ModeloCiudad> {
     return   this.http.get<ModeloCiudad>(`${this.url}/ciudads/${id}`);
   }
 
@@ -41,7 +41,7 @@ export class CiudadService {
     })
   }
 
-  EliminarCiudad(id:string): Observable<any>{
+  EliminarCiudad(id:String): Observable<any>{
     return this.http.delete<ModeloCiudad>(`${this.url}/ciudads/${id}`,{
       headers:new HttpHeaders({
         'Authorization': `Bearer ${this.token}`

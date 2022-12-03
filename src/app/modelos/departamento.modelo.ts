@@ -1,5 +1,5 @@
 export class ModeloDepartamento{
-    id?: string;
-    codigo?: string;
-    nombre?: string;
+    id?: String;
+    codigo?: String;
+    nombre?: String;
 }

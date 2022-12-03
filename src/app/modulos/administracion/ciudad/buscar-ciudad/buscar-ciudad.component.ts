@@ -13,6 +13,8 @@ import { DepartamentoService } from 'src/app/servicios/departamento.service';
 export class BuscarCiudadComponent implements OnInit {
 
   listadoCiudades: ModeloCiudad[]=[];
+  listadoDepartamentos : ModeloDepartamento[] = [];
+
  
   constructor(private ciudadServicio: CiudadService,
     private departamentoServicio : DepartamentoService){}
@@ -24,8 +26,28 @@ export class BuscarCiudadComponent implements OnInit {
 
   ObtenerListadoCiudades(){
     
-    this.ciudadServicio.ObtenerCiudades().subscribe((datos: ModeloCiudad[]) =>{
-      this.listadoCiudades=datos;
+    this.ciudadServicio.ObtenerCiudades().subscribe((ciudades: ModeloCiudad[]) =>{
+      ciudades.forEach(el => {
+        let ciudad = new ModeloCiudad();
+        this.departamentoServicio.ObtenerDepartamentosPorId(el.departamentoId!).subscribe((depto: ModeloDepartamento) => {
+          ciudad.departamentoId = depto.nombre;
+        })         
+        ciudad.id = el.id;
+        ciudad.codigo = el.codigo;
+        ciudad.nombre = el.nombre; 
+   
+
+        this.listadoCiudades.push(ciudad);
+
+        
+        this.listadoCiudades.forEach(element => {
+          console.log(element.nombre)
+          console.log(element.departamentoId)
+          
+        });
+        
+      });
+      
     })
   }
 

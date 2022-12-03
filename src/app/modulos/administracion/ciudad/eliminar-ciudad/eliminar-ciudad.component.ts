@@ -13,7 +13,8 @@ import { DepartamentoService } from 'src/app/servicios/departamento.service';
 })
 export class EliminarCiudadComponent implements OnInit {
 
-  id : string = '';
+  id : String = '';
+  ciudad = new ModeloCiudad();
   //listadoDepartamentos: ModeloDepartamento[]=[];
 
 
@@ -43,22 +44,26 @@ export class EliminarCiudadComponent implements OnInit {
   }
 
   BuscarCiudad(){
+
+    
+    
     this.servicioCiudad.ObtenerCiudadesPorId(this.id).subscribe((datos: ModeloCiudad) =>{
-      this.fbvalidador.controls['id'].setValue(this.id);
-      this.fbvalidador.controls["codigo"].setValue(datos.codigo);   
-      this.fbvalidador.controls['nombre'].setValue(datos.nombre);
-      this.fbvalidador.controls['departamentoId'].setValue(datos.departamentoId);
+      let ciudad1 = new ModeloCiudad();
+      this.servicioDepartamento.ObtenerDepartamentosPorId(datos.departamentoId!).subscribe((dpto: ModeloDepartamento) => {
+        ciudad1.departamentoId=dpto.nombre;
+        ciudad1.codigo=datos.codigo;
+        ciudad1.nombre=datos.nombre;
+
+        this.fbvalidador.controls['id'].setValue(this.id);
+        this.fbvalidador.controls["codigo"].setValue(this.ciudad.codigo);   
+        this.fbvalidador.controls['nombre'].setValue(this.ciudad.nombre);
+        this.fbvalidador.controls['departamentoId'].setValue(this.ciudad.departamentoId);                                       
+      })
+      
     })
   }
 
-  /*ListarDepartamentos(){
-    return this.servicioDepartamento.ObtenerDepartamentos().subscribe((datos: ModeloDepartamento[]) => {
-      this.listadoDepartamentos = datos;
-    });
-  }*/
-
-  EliminarCiudad(){
-       
+  EliminarCiudad(){    
 
     this.servicioCiudad.EliminarCiudad(this.id).subscribe((datos: ModeloCiudad)=>{
       alert('Se ha eliminado la ciudad.');

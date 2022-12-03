@@ -12,9 +12,6 @@
                 Departamento
             </th>
             <th>
-                Parque
-            </th>
-            <th>
                 Editar
             </th>
         </tr>
@@ -31,12 +28,10 @@
                 {{p.departamentoId}}
             </td>
             <td>
-                {{p.parques}}
-            </td>
-            <td>
                 <a routerLink="/administracion/editar-ciudad/{{p.id}}" class="btn">Editar ciudad</a>
                 <br>
-                <button routerLink="/administracion/eliminar-ciudad/{{p.id}}" class="btn btn-danger">Eliminar</button>
+                <br>
+                <button routerLink="/administracion/eliminar-ciudad/{{p.id}}" class="btn btn-danger">Eliminar ciudad</button>
             </td>
         </tr>
     </tbody>
